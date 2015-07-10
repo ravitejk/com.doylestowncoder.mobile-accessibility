@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.phonegap.plugin.mobile-accessibility"
+    id="com.doylestowncoder.mobile-accessibility"
     version="0.1.3">
     <name>Mobile Accessibility</name>
-    <description>PhoneGap Mobile Accessibility Plugin</description>
+    <description>Cordvoa Mobile Accessibility Plugin</description>
     <license>Apache 2.0</license>
-    <keywords>phonegap, mobile accessibility</keywords>
+    <keywords>cordova, mobile accessibility</keywords>
 
     <engines>
-        <engine name="cordova" version=">=3.0.0" />
+        <engine name="cordova" version=">=5.0.0" />
     </engines>
 
     <js-module src="www/mobile-accessibility.js" name="mobile-accessibility">
@@ -19,9 +19,6 @@
     <js-module src="www/MobileAccessibilityNotifications.js" name="MobileAccessibilityNotifications">
         <clobbers target="MobileAccessibilityNotifications" />
     </js-module>
-
-   <dependency id="cordova-plugin-device" url="https://github.com/apache/cordova-plugin-device.git" />
-   <dependency id="cordova-plugin-network-information" url="https://github.com/apache/cordova-plugin-network-information.git" />
 
     <!-- ios -->
     <platform name="ios">
@@ -38,19 +35,9 @@
     <!-- android -->
     <platform name="android">
         <config-file target="config.xml" parent="/*">
-            <!-- for some reason, these dependant feature tags, Device and NetworkStatus,
-                are not being added to the /res/xml/config.xml when the project is built,
-                so I've added them here to make sure they make it into the build -->
-            <feature name="Device">
-                <param name="android-package" value="org.apache.cordova.device.Device" />
-            </feature>
-            <feature name="NetworkStatus">
-                <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager"/>
-            </feature>
-
             <access origin="https://ssl.gstatic.com/accessibility/javascript/android/*" />
             <feature name="MobileAccessibility" >
-                <param name="android-package" value="com.phonegap.plugin.mobileaccessibility.MobileAccessibility"/>
+                <param name="android-package" value="com.doylestowncoder.mobileaccessibility.MobileAccessibility"/>
             </feature>
         </config-file>
         <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/MobileAccessibility.java" target-dir="src/com/phonegap/plugin/mobileaccessibility" />
@@ -62,7 +49,7 @@
         <asset src="www/android" target="plugins/com.phonegap.plugin.mobile-accessibility/android" />
     </platform>
 
-    <!-- windows -->
+    <!-- windows
     <platform name="windows">
         <js-module src="src/windows/mobile-accessibility-proxy.js" name="MobileAccessibilityProxy">
             <merges target="" />
@@ -80,4 +67,5 @@
             <DeviceCapability Name="microphone" />
         </config-file>
     </platform>
+    -->
 </plugin>

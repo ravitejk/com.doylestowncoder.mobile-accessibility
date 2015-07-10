@@ -22,9 +22,6 @@
 var argscheck = require('cordova/argscheck'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec'),
-    device = require('cordova-plugin-device.device'),
-    network = require('cordova-plugin-network-information.network'),
-    connection = require('cordova-plugin-network-information.Connection'),
     MobileAccessibilityNotifications = require('com.phonegap.plugin.mobile-accessibility.MobileAccessibilityNotifications');
 
 var MobileAccessibility = function() {
@@ -37,6 +34,9 @@ var MobileAccessibility = function() {
     this._usePreferredTextZoom = false;
     this._isHighContrastEnabled = false;
     this._highContrastScheme = undefined;
+		this._isIOS = false;
+		this._isAndroid = false;
+		this_version = "0.0.0";
 
     // Create new event handlers on the window (returns a channel instance)
     this.channels = {
@@ -84,6 +84,11 @@ MobileAccessibility.onHasSubscribersChange = function() {
     }
 };
 
+MobileAccessibility.prototype.configSettings = function(isIOS, isAndroid, version) {
+	_isIOS = isIOS;
+	_isAndroid = isAndroid;
+	_version = version;
+}
 /**
  * Asynchronous call to native MobileAccessibility determine if a screen reader is running.
  * @param {function} callback A callback method to receive the asynchronous result from the native MobileAccessibility.
@@ -95,14 +100,14 @@ MobileAccessibility.prototype.isScreenReaderRunning = function(callback) {
     }, null, "MobileAccessibility", "isScreenReaderRunning", []);
 };
 MobileAccessibility.prototype.isVoiceOverRunning = function(callback) {
-    if (device.platform.toLowerCase() === "ios") {
+    if (this._isIOS) {
         MobileAccessibility.prototype.isScreenReaderRunning(callback);
     } else {
         callback(false);
     }
 };
 MobileAccessibility.prototype.isTalkBackRunning = function(callback) {
-    if (device.platform.toLowerCase() === "android" || device.platform.toLowerCase() === "amazon-fireos") {
+    if (this._isAndroid) {
         MobileAccessibility.prototype.isScreenReaderRunning(callback);
     } else {
         callback(false);
@@ -112,13 +117,13 @@ MobileAccessibility.prototype.isChromeVoxActive = function () {
     return typeof cvox !== "undefined" && cvox.ChromeVox.host.ttsLoaded() && cvox.Api.isChromeVoxActive();
 };
 MobileAccessibility.prototype.activateOrDeactivateChromeVox = function(bool) {
-    if (device.platform !== "Android") return;
+    if (!this._isAndroid) return;
     if (typeof cvox === "undefined") {
         if (bool) {
             console.warn('A screen reader is running but ChromeVox has failed to initialize.');
-            if (navigator.connection.type === Connection.UNKNOWN || navigator.connection.type === Connection.NONE) {
+            //if (navigator.connection.type === Connection.UNKNOWN || navigator.connection.type === Connection.NONE) {
                 mobileAccessibility.injectLocalAndroidVoxScript();
-            }
+            //}
         }
     } else {
         // activate or deactivate ChromeVox based on whether or not or not the screen reader is running.
@@ -148,8 +153,8 @@ MobileAccessibility.prototype.onOrientationChange = function(event) {
 
 MobileAccessibility.prototype.scriptInjected = false;
 MobileAccessibility.prototype.injectLocalAndroidVoxScript = function() {
-    var versionsplit = device.version.split('.');
-    if (device.platform !== "Android" ||
+    var versionsplit = this._version.split('.');
+    if (!this._isAndroid ||
         !(versionsplit[0] > 4 || (versionsplit[0] == 4 && versionsplit[1] >= 1))  ||
         typeof cvox !== "undefined" || mobileAccessibility.scriptInjected) return;
     var script = document.createElement('script');
