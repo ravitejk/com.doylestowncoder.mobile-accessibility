@@ -22,7 +22,7 @@
 var argscheck = require('cordova/argscheck'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec'),
-    MobileAccessibilityNotifications = require('com.doylestowncoder.mobile-accessibility..MobileAccessibilityNotifications');
+    MobileAccessibilityNotifications = require('com.doylestowncoder.mobile-accessibility.MobileAccessibilityNotifications');
 
 var MobileAccessibility = function() {
     this._isScreenReaderRunning = false;
