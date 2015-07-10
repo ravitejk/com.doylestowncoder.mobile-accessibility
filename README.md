@@ -17,6 +17,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
+# IN PROGRESS DO NOT USE, YET!
+==========================================
+
 # com.doylestowncoder.mobile-accessibility
 ==========================================
 
