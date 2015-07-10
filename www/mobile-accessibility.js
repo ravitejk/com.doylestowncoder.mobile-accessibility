@@ -22,7 +22,7 @@
 var argscheck = require('cordova/argscheck'),
     utils = require('cordova/utils'),
     exec = require('cordova/exec'),
-    MobileAccessibilityNotifications = require('com.phonegap.plugin.mobile-accessibility.MobileAccessibilityNotifications');
+    MobileAccessibilityNotifications = require('com.doylestowncoder.mobile-accessibility..MobileAccessibilityNotifications');
 
 var MobileAccessibility = function() {
     this._isScreenReaderRunning = false;
@@ -85,10 +85,9 @@ MobileAccessibility.onHasSubscribersChange = function() {
 };
 
 MobileAccessibility.prototype.configSettings = function(isIOS, isAndroid, version) {
-	_isIOS = isIOS;
-	_isAndroid = isAndroid;
-	_version = version;
-}
+	this._isIOS = isIOS;
+	this._isAndroid = isAndroid;
+	this._version = version;}
 /**
  * Asynchronous call to native MobileAccessibility determine if a screen reader is running.
  * @param {function} callback A callback method to receive the asynchronous result from the native MobileAccessibility.
