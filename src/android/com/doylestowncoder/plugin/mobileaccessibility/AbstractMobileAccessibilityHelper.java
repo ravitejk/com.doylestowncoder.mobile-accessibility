@@ -19,7 +19,7 @@
  *
 */
 
-package com.phonegap.plugin.mobileaccessibility;
+package com.doylestowncoder.plugin.mobileaccessibility;
 
 import android.view.ViewParent;
 
