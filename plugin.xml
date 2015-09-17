@@ -40,12 +40,12 @@
                 <param name="android-package" value="com.doylestowncoder.plugin.mobileaccessibility.MobileAccessibility"/>
             </feature>
         </config-file>
-        <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/MobileAccessibility.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
-        <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/AbstractMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
-        <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/DonutMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
-        <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/IceCreamSandwichMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
-        <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/JellyBeanMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
-        <source-file src="src/android/com/phonegap/plugin/mobileaccessibility/KitKatMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
+        <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/MobileAccessibility.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
+        <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/AbstractMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
+        <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/DonutMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
+        <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/IceCreamSandwichMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
+        <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/JellyBeanMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
+        <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/KitKatMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
         <asset src="www/android" target="plugins/com.doylestowncoder.plugin.mobile-accessibility/android" />
     </platform>
 
