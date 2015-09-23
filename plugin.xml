@@ -46,7 +46,7 @@
         <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/IceCreamSandwichMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
         <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/JellyBeanMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
         <source-file src="src/android/com/doylestowncoder/plugin/mobileaccessibility/KitKatMobileAccessibilityHelper.java" target-dir="src/com/doylestowncoder/plugin/mobileaccessibility" />
-        <asset src="www/android" target="plugins/com.doylestowncoder.plugin.mobile-accessibility/android" />
+        <asset src="www/android" target="plugins/com.doylestowncoder.mobile-accessibility/android" />
     </platform>
 
     <!-- windows

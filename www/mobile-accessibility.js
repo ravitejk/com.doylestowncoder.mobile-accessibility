@@ -169,8 +169,8 @@ MobileAccessibility.prototype.injectLocalAndroidVoxScript = function() {
     };
 
     script.src = (versionsplit[0] > 4 || versionsplit[1] > 3)
-        ? "plugins/com.phonegap.plugin.mobile-accessibility/android/chromeandroidvox.js"
-        : "plugins/com.phonegap.plugin.mobile-accessibility/android/AndroidVox_v1.js";
+        ? "plugins/com.doylestowncoder.mobile-accessibility/android/chromeandroidvox.js"
+        : "plugins/com.doylestowncoder.mobile-accessibility/android/AndroidVox_v1.js";
     document.getElementsByTagName('head')[0].appendChild(script);
     mobileAccessibility.scriptInjected = true;
 };
