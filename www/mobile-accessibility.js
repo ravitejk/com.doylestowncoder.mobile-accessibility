@@ -152,6 +152,7 @@ MobileAccessibility.prototype.onOrientationChange = function(event) {
 
 MobileAccessibility.prototype.scriptInjected = false;
 MobileAccessibility.prototype.injectLocalAndroidVoxScript = function() {
+	/*
     var versionsplit = this._version.split('.');
     if (!this._isAndroid ||
         !(versionsplit[0] > 4 || (versionsplit[0] == 4 && versionsplit[1] >= 1))  ||
@@ -173,6 +174,7 @@ MobileAccessibility.prototype.injectLocalAndroidVoxScript = function() {
         : "plugins/com.doylestowncoder.mobile-accessibility/android/AndroidVox_v1.js";
     document.getElementsByTagName('head')[0].appendChild(script);
     mobileAccessibility.scriptInjected = true;
+    */
 };
 
 /**
