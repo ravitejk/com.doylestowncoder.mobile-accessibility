@@ -180,7 +180,8 @@
     mFontScale = zoom/100;
     if (iOS7Delta)  {
         NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%f%%'", zoom];
-        [self.webViewEngine evaluateJavaScript:jsString completionHandler:nil];
+        //[self.webViewEngine evaluateJavaScript:jsString completionHandler:nil]; //this is for cordova-ios@4.1.1
+        [[self webView] stringByEvaluatingJavaScriptFromString:jsString];
     }
 }
 
